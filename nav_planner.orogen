@@ -1,6 +1,7 @@
 name "nav_planner"
 
 using_task_library "motion_planning_libraries"
+using_task_library "traversability"
 
 deployment "nav_planner" do
 
