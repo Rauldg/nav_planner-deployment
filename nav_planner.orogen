@@ -2,6 +2,7 @@ name "nav_planner"
 
 using_task_library "motion_planning_libraries"
 using_task_library "traversability"
+using_task_library "graph_slam"
 
 deployment "nav_planner" do
 
@@ -11,8 +12,12 @@ deployment "nav_planner" do
 
     task('nav_planner', "motion_planning_libraries::Task").
     priority(10).
-    triggered
+    periodic(1)
     
+    task('slam', "graph_slam::VelodyneSLAM").
+    priority(10).
+    triggered
+
     add_default_logger
 
 end
