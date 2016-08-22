@@ -9,6 +9,7 @@
   <depend package="base/cmake" />
   <depend package="planning/orogen/motion_planning_libraries" />
   <depend package="planning/orogen/traversability" />
+  <depend package="missions/orogen/waypoints" />
   <!--
    To add any dependencies use the depend tag
   <depend package="dummy-dependency-0" />

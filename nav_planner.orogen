@@ -3,6 +3,7 @@ name "nav_planner"
 using_task_library "motion_planning_libraries"
 using_task_library "traversability"
 using_task_library "graph_slam"
+using_task_library "waypoints"
 
 deployment "nav_planner" do
 
@@ -17,6 +18,9 @@ deployment "nav_planner" do
     task('slam', "graph_slam::VelodyneSLAM").
     priority(10).
     triggered
+
+    task('waypoints', "waypoints::Task").
+    priority(10)
 
     add_default_logger
 
